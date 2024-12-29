@@ -1,11 +1,11 @@
-# Learn C++ 🚀
+# Learning documentation 🚀
 
-Welcome to the **Learn C++ Repository**! This repository is designed to help beginners learn and practice C++ programming concepts through examples and exercises.
+Welcome to the **Learning documentation Repository**! This repository is my documetation of the projects of the outcomes of my learnings of coding languages,arduino etc.
 
 ---
 
 ## 📚 **Contents**
-
+C++ projects.
 1. **hangman** - the game is made using the knowledge of functions,vectors,loops.   
 2. **tick tac toe** - the game is made using the knowledge of functions,loops,strings.
 
