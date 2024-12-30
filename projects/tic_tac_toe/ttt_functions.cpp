@@ -133,7 +133,7 @@ void end_game(){
     if(win_con()==1){
         std::cout<<" We have a winner!";
     }
-    else if(grid_status()==0){
+    else if(win_con()==0){
         std::cout<<" We have a tie";
     }
 }
