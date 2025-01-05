@@ -12,6 +12,7 @@ signal pin of pir sensor to digital pin
 grond pin of PIR to GND pin
 
 connect a led pin to the arduino
+## Working of sensor
 
 1. **Infrared Radiation (IR):**
     - All objects emit infrared radiation (heat energy) proportional to their temperature.
