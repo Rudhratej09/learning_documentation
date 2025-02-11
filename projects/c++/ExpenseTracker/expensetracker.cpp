@@ -3,34 +3,58 @@
 #include<string>
 #include<vector>
 #include "expensetracker.hpp"
-
+Expense::Expense(std::string dt, std::string t, int amt, std::string cat){
+date = dt;
+    time = t;
+    amount = amt;
+    category = cat;
+}
 // add
-void Expense::makeExpense(std::string dt,std::string t,std::string cat,int amt){
-    date=dt;
-    amount=amt;
-    categories=cat;
-    time=t;
+void Expense::makeExpense(std::vector<Expense>& expenses){
+    std::string dt, t, cat;
+    int amt;
+    std::cout << "Enter Date (DD-MM-YYYY): ";
+    std::cin.ignore();
+    std::getline(std::cin, dt);
+
+    std::cout << "Enter Time (HH:MM): ";
+    std::getline(std::cin, t);
+
+    std::cout << "Enter Amount: ";
+    std::cin >> amt;
+    std::cin.ignore(); // Clear buffer to ensure correct input
+
+    std::cout << "Enter Category: ";
+    std::getline(std::cin, cat);
+
+    // Add new Expense to the vector
+    expenses.emplace_back(dt, t, amt, cat);
+    std::cout << "Expense added successfully!\n";
 }
 
 //remove
-void Expense::removeExpense(std::vector<Expense>&expenses,std::string dt,std::string t,std::string cat,int amt){
+void Expense::removeExpense(std::vector<Expense>&expenses,std::string category, std::string time, std::string date, int amount){
 for(int i=0;i<expenses.size();i++){
-    if(expenses[i].categories==cat && expenses[i].date==dt and expenses[i].amount==amt ){
+    if(expenses[i].categories==category && expenses[i].date==date and expenses[i].amount==amount && expenses[i].time == time ){
         expenses.erase(expenses.begin()+i);
         std::cout<<"record succesfully erased";
-        return;
+        break;
     }
 }
-std::cout<<"record not found";
+if (!found) {
+        std::cout << "Expense not found.\n";
+    }
 }
 //display expneses
 void Expense::showExpense(std::vector<Expense>&expenses){
-    for(int i=0;i<expenses.size();i++){
-        std::cout<<"==========================\n";
-        std::cout<<"Date:"<<expenses[i].date<<"\n";
-        std::cout<<"Time:"<<expenses[i].time<<"\n";
-        std::cout<<"Amount:"<<expenses[i].amount<<"\n";
-        std::cout<<"Category:"<<expenses[i].categories<<"\n";
-        std::cout<<"==========================\n";
+    if (expenses.empty()) {
+        std::cout << "No expenses recorded.\n";
+        return;
+    }
+
+    std::cout << "\n--- Expense List ---\n";
+    for (int i = 0; i < expenses.size(); i++) {
+        std::cout << "Date: " << expenses[i].date << ", Time: " << expenses[i].time 
+                  << ", Amount: ₹ " << expenses[i].amount << ", Category: " << expenses[i].category << "\n";
     }
 }
