@@ -1,15 +1,15 @@
-// expense tracker hpp
+// expense tracker hpp(header)
 #include<iostream>
 #include<string>
 #include<vector>
 class Expense{
-    private:
+    public:
     std::string date;
     std::string time;
-    std::string categories;
+    std::string categor;
     int amount;
-    public:
-    Expense(){}
+    Expense() : date(""), time(""), amount(0), category(""){}
+    Expense(std::string dt,std::string t,int amt,std::string cat)
     void makeExpense(std::string dt,std::string t,std::string cat,int amt);
     void removeExpense(std::vector<Expense>&expenses,std::string dt,std::string t,std::string cat,int amt);
     void showExpense(std::vector<Expense>&expenses);
