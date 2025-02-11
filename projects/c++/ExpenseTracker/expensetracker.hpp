@@ -10,8 +10,8 @@ class Expense{
     int amount;
     Expense() : date(""), time(""), amount(0), category(""){}
     Expense(std::string dt,std::string t,int amt,std::string cat)
-    void makeExpense(std::string dt,std::string t,std::string cat,int amt);
-    void removeExpense(std::vector<Expense>&expenses,std::string dt,std::string t,std::string cat,int amt);
-    void showExpense(std::vector<Expense>&expenses);
+    void makeExpense(std::vector <Expense> &expenses);
+    void removeExpense(std::vector<Expense>&expenses,std::string category,std::string time,std::string date,int amount);
+    static void showExpense(std::vector<Expense>&expenses);
     
 };
