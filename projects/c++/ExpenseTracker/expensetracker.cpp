@@ -34,8 +34,9 @@ void Expense::makeExpense(std::vector<Expense>& expenses){
 
 //remove
 void Expense::removeExpense(std::vector<Expense>&expenses,std::string category, std::string time, std::string date, int amount){
-for(int i=0;i<expenses.size();i++){
-    if(expenses[i].categories==category && expenses[i].date==date and expenses[i].amount==amount && expenses[i].time == time ){
+    bool found = false;
+    for(int i=0;i<expenses.size();i++){
+    if(expenses[i].category==category && expenses[i].date==date and expenses[i].amount==amount && expenses[i].time == time ){
         expenses.erase(expenses.begin()+i);
         std::cout<<"record succesfully erased";
         break;
