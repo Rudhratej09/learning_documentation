@@ -5,11 +5,23 @@
 #include "expensetracker.hpp"
 int main(){
     std::vector <Expense> expenses;
-    Expense exp;
     
-    exp.makeExpense("30-01-2025","17:32","Food",35);
-    expenses.push_back(exp);
-    exp.showExpense(expenses);
-    exp.removeExpense(expenses,"30-01-2025","17:32","Food",35);
+    char choice;
+
+    do {
+        Expense expense;
+        expense.makeExpense(expenses);
+
+        std::cout << "Do you want to add another expense? (y/n): ";
+        std::cin >> choice;
+        std::cin.ignore();
+
+    } while (choice == 'y' || choice == 'Y');
+
+    // Display expenses
+    std::cout << "\nAll Expenses:\n";
+    Expense::showExpense(expenses);
+
+    return 0;
     
 }
