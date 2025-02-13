@@ -8,6 +8,7 @@ Welcome to the **Learning documentation Repository**! This repository is my docu
 C++ projects.
 1. **hangman** - the game is made using the knowledge of functions,vectors,loops.   
 2. **tick tac toe** - the game is made using the knowledge of functions,loops,strings.
+3. **Expense tracker**- helped close a few gaps in object orienteed programming.
 
 ---
 
